@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option go_package = "mbooke/message";
+option java_multiple_files = true;
+option java_package = "io.grpc.mbooke.message";
+option java_outer_classname = "MessageProto";
+
+package message;
+
+service StreamService {
+  rpc FetchResponse (Request) returns (stream Response) {}
+  rpc SendMessage (MessageRequest) returns (MessageResponse) {}
+}
+
+message Request {
+  string id = 1;
+}
+
+message Response {
+  string result = 1;
+}
+
+message MessageRequest {
+  string id = 1;
+  string message = 2;
+}
+
+message MessageResponse {
+  string result = 1;
+}

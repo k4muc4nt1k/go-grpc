@@ -17,3 +17,6 @@ This includes a stream server, stream client, and gRPC client implementation.
   
 - run client  
   `go run grpcclient/client/main.go`
+
+**Build Linux**  
+  `env GOOS=linux GOARCH=amd64 go build`
